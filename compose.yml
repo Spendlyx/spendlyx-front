@@ -1,10 +1,12 @@
 services:
   angular:
+    build:
+      context: .
+      dockerfile: Dockerfile
     container_name: spendlyx-front
-    build: .
     ports:
       - "4200:4200"
     volumes:
       - .:/app
       - /app/node_modules
-    command: ng serve --host 0.0.0.0
+    command: npm run start
