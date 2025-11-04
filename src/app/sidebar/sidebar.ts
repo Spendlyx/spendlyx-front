@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { SidebarItems } from '@app/sidebar/sidebar-items/sidebar-items';
 
 @Component({
@@ -6,4 +6,10 @@ import { SidebarItems } from '@app/sidebar/sidebar-items/sidebar-items';
   templateUrl: './sidebar.html',
   imports: [SidebarItems],
 })
-export class Sidebar {}
+export class Sidebar {
+  protected readonly isSidebarOpen = signal(false);
+
+  toggleSidebar() {
+    this.isSidebarOpen.update(v => !v);
+  }
+}
