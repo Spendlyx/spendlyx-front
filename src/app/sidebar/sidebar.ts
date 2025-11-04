@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, HostListener, signal } from '@angular/core';
 import { SidebarItems } from '@app/sidebar/sidebar-items/sidebar-items';
 
 @Component({
@@ -7,9 +7,16 @@ import { SidebarItems } from '@app/sidebar/sidebar-items/sidebar-items';
   imports: [SidebarItems],
 })
 export class Sidebar {
-  protected readonly isSidebarOpen = signal(false);
+  private readonly MOBILE_BREAKPOINT = 768;
+  isSidebarOpen = signal(window.innerWidth >= this.MOBILE_BREAKPOINT);
 
   toggleSidebar() {
-    this.isSidebarOpen.update(v => !v);
+    this.isSidebarOpen.set(!this.isSidebarOpen());
+  }
+
+  @HostListener('window:resize')
+  onResize() {
+    const isDesktop = window.innerWidth >= this.MOBILE_BREAKPOINT;
+    this.isSidebarOpen.set(isDesktop);
   }
 }
