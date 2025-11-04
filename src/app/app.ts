@@ -8,5 +8,9 @@ import { Sidebar } from '@app/sidebar/sidebar';
   templateUrl: './app.html',
 })
 export class App {
-  protected readonly title = signal('spendlyx-front');
+  protected readonly isSidebarOpen = signal(false);
+
+  toggleSidebar() {
+    this.isSidebarOpen.update(v => !v);
+  }
 }

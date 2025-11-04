@@ -1,6 +1,13 @@
 <div class="flex h-screen">
-  <app-sidebar class="w-64 shrink-0" />
-  <main class="flex-1 p-6 overflow-y-auto bg-gray-50">
+  <button class="absolute top-4 left-4 z-20 p-2 bg-gray-800 text-white rounded-md md:hidden" (click)="toggleSidebar()">
+    ☰
+  </button>
+
+  <app-sidebar
+    class="fixed md:static h-screen w-64 bg-gray-900 text-white transform transition-all duration-500 ease-in-out z-10 md:translate-x-0 opacity-100"
+    [class.-translate-x-full]="!isSidebarOpen()" [class.opacity-0]="!isSidebarOpen()" />
+
+  <main class="flex-1 p-6 overflow-y-auto bg-gray-50 w-full">
     <router-outlet />
   </main>
 </div>
