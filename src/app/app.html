@@ -1,3 +1,6 @@
-<app-sidebar />
-
-<router-outlet />
+<div class="flex h-screen">
+  <app-sidebar class="w-64 shrink-0" />
+  <main class="flex-1 p-6 overflow-y-auto bg-gray-50">
+    <router-outlet />
+  </main>
+</div>
