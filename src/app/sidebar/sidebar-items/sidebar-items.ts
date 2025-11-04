@@ -4,7 +4,7 @@ import { SidebarItem as SidebarItemInterface } from "@app/sidebar/sidebar-item/s
 import { SIDEBAR_ITEMS } from "@app/sidebar/sidebar-items/sidebar-items-config";
 
 @Component({
-  selector: 'sidebar-items',
+  selector: 'app-sidebar-items',
   templateUrl: './sidebar-items.html',
   imports: [SidebarItem]
 })

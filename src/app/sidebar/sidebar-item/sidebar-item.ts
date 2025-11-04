@@ -1,7 +1,7 @@
 import { Component, Input } from "@angular/core";
 
 @Component({
-  selector: 'sidebar-item',
+  selector: 'app-sidebar-item',
   templateUrl: './sidebar-item.html',
 })
 export class SidebarItem {

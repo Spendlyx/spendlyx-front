@@ -1,13 +1,13 @@
 <ul class="h-full p-4 flex flex-col justify-between">
   <div>
     @for (item of navItems; track $index) {
-      <sidebar-item
+      <app-sidebar-item
         [path]="item.path"
         [label]="item.label"
       />
     }
   </div>
-  <sidebar-item
+  <app-sidebar-item
     [path]="'/settings'"
     [label]="'Settings'"
   />
