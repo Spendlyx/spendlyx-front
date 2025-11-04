@@ -1,10 +1,10 @@
 import { Component, Input } from "@angular/core";
 
 @Component({
-  selector: 'app-sidebar-item',
-  templateUrl: './app-sidebar-item.html',
+  selector: 'sidebar-item',
+  templateUrl: './sidebar-item.html',
 })
-export class AppSidebarItem {
+export class SidebarItem {
   @Input() path!: string;
   @Input() label!: string;
 }

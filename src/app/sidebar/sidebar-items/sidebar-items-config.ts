@@ -1,4 +1,4 @@
 export const SIDEBAR_ITEMS = [
-  { label: 'Dashboard', path: '/dashboard' },
+  { label: 'Dashboard', path: '/' },
   { label: 'Budget', path: '/budget' },
 ];
