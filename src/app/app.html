@@ -1,4 +1,14 @@
-<h1 class="text-3xl font-bold underline">
-  Hello world!
-</h1>
-<router-outlet />
+<div class="flex h-screen relative">
+  <app-sidebar />
+
+   @if (isSidebarOpenInMobile()) {
+     <div
+       class="fixed inset-0 bg-black/50 z-10 md:hidden transition-opacity duration-300"
+       (click)="sidebarService.toggle()"
+     ></div>
+   }
+
+  <main class="flex-1 pl-10 md:pl-6 p-6 overflow-y-auto w-full bg-gray-50 z-0">
+    <router-outlet />
+  </main>
+</div>
