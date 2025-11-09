@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
 import { SidebarItem } from "@app/sidebar/sidebar-item/sidebar-item";
-import { SidebarItem as SidebarItemInterface } from "@app/sidebar/sidebar-item/models/sidebar-item.model";
+import { SidebarItem as SidebarItemInterface } from "@app/sidebar/models/sidebar-item.model";
 import { SIDEBAR_ITEMS } from "@app/sidebar/sidebar-items/sidebar-items.config";
 
 @Component({
